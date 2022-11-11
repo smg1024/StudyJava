@@ -1,0 +1,10 @@
+package sw.search;
+
+public class Ex05_BinaryTree {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
