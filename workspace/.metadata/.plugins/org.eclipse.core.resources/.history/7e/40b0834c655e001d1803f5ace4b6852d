@@ -1,0 +1,12 @@
+package io.test;
+
+public class Ex02_FileTest {
+
+	public static void main(String[] args) {
+		/*
+		 * data2.txt의 파일을 입력하여 성적처리를 하는 프로그램을 작성하라
+		 * 
+		 */
+	}
+
+}

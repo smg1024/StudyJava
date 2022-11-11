@@ -1,0 +1,50 @@
+package sw.array;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Ex03_Fibonacci {
+	static Scanner sc = new Scanner(System.in);
+/*
+ * 피보나치 수열 만들기
+ * [입력]
+ * 10
+ * 
+ * [출력]
+ * 1 1 2 3 5 8 13 21 34 55
+ */
+	static int res = 1;
+	public static void fib(int n) {
+		System.out.printf("%3d", res);
+		int num1 = 0;	// 전전값
+		int num2 = 1;	// 전값
+		int sum = 1;	// 현재값
+		
+		for(int i=0; i<n; i++) {
+			System.out.printf("%3d", sum);
+			sum = num1 + num2;	// 새로운 현재
+			num1 = num2;	// 새로운 전전값
+			num2 = sum;		// 새로운 전값
+		}
+		
+		
+//		for(int i=1; i<=n; i++) {
+//			res += i;
+//			System.out.println(res);
+//			
+//		}
+		
+//		int[] arr = new int[n];
+//		for(int i=1; i<=n; i++) {
+//			Arrays.fill(arr, i);
+//		}
+//		System.out.println(Arrays.toString(arr));
+	}
+	
+	public static void main(String[] args) {
+		int num = sc.nextInt();
+		
+		fib(num);
+	}
+
+}

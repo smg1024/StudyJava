@@ -1,0 +1,18 @@
+package sw.search;
+
+import java.util.Scanner;
+
+public class BinarySearch {
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		// 데이터
+		// 데이터의 수 입력 받아서 1~100사이 난수를 생성 후 오름차순으로 정렬
+		System.out.print("데이터 수 : ");
+		int idx = sc.nextInt();
+		
+		
+
+	}
+
+}

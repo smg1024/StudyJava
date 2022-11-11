@@ -1,0 +1,15 @@
+package sw.search;
+
+public class IntStackMain {
+
+	public static void startStack() {
+		// 스택 객체를 생성하고, 스택의 크기를 설정할 수 있음
+		IntStack stack = new IntStack(100);
+	}
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

@@ -1,0 +1,30 @@
+package sw.search;
+// 외부 정렬 : 쉘, 퀵, merge, heap
+public class ExternalSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class ExSort{
+	int[] num;
+	void init() {	// 임의 초기값
+		num = new int[] {4, 3, 6, 7, 1, 4, 9};
+	}
+	
+	// 출력
+	void disp() {
+		for(int n : num) {
+			System.out.printf("%-3d", n);
+		}
+		System.out.println();
+	}
+	
+	// 쉘 정렬 : 단순삽입 정렬의 장점을 살리고 단점을 보완한 정렬
+	void shellSort(int[] a, int n) {
+		for(int n=)
+	}
+}

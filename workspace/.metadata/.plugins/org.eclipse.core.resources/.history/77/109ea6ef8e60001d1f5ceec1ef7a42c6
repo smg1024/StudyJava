@@ -1,0 +1,24 @@
+package sw.search;
+
+public class SortTest {
+	private String alumni;
+	private String name;
+	private int score;
+	
+	public String getAlumni() {
+		return this.alumni;
+	}
+	
+	public void setAlumni(String alumni) {
+		this.alumni = alumni;
+	}
+	
+	public String getName() {
+		return name;
+		
+		public void setName(String name) {
+			this.name = name;
+		}
+		
+	}
+}

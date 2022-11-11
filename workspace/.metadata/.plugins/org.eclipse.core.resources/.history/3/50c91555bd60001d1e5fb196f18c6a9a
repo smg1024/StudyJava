@@ -1,0 +1,85 @@
+package sw.search;
+// 외부 정렬 : 쉘, 퀵, merge, heap
+public class ExternalSort {
+
+	public static void main(String[] args) {
+		ExSort es = new ExSort();
+		es.init();
+		es.disp();
+//		es.shellSort();
+		es.quickSort();
+	}
+
+}
+
+class ExSort{
+	int[] num;
+	void init() {	// 임의 초기값
+		num = new int[] {5, 8, 4, 2, 6, 1, 3, 9, 7};
+	}
+	
+	void disp() {	// 출력
+		for(int n : num) {
+			System.out.printf("%-3d", n);
+		}
+		System.out.println();
+	}
+	
+	private void swap(int[] num, int left, int right) {	// swap 교환 함수
+		int temp = num[left];
+		num[left] = num[right];
+		num[right] = temp;
+	}
+	
+	// 쉘 정렬 : 단순삽입 정렬의 장점을 살리고 단점을 보완한 정렬
+	void shellSort() {
+		for(int i=num.length/2; i>0; i/=2) {	// i-way 부분 정렬
+			for(int j=i; j<num.length; j++) {	
+				int k;
+				int temp = num[j];
+				for(k=j-i; k>=0 && num[k]>temp; k-=i) num[k+i] = num[k];
+				num[k+i] = temp;
+			}
+			System.out.println("----------");
+			disp();
+		}
+	}
+	
+	// 퀵 정렬
+	void quickSort() {
+		int pl = 0;	// 왼쪽 커서
+		int pr = num.length-1;	// 오른쪽 커서
+		int piv = num[num.length/2];	// pivot 기준점
+		
+		do {
+			while(num[pl]<piv) pl++;
+			while(num[pr]>piv) pr--;
+			if(pl<=pr)
+				swap(num, pl++, pr--);
+			disp();
+		}while(pl<=pr);
+		
+		
+		System.out.println("피벗값은 " + piv + " 입니다.");
+		
+		System.out.println("피벗 이하의 그룹 :");
+		for(int i=0; i<pl-1; i++) {
+			System.out.print(num[i] + " ");
+		}
+		System.out.println();
+		
+		if(pl>pr+1) {
+			System.out.println("피벗과 같은 그룹 :");
+			for(int i=pr+1; i<=pl-1; i++) {
+				System.out.print(num[i] + " ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println("피벗 이상의 그룹 :");
+		for(int i=pr+1; i<num.length; i++) {
+			System.out.print(num[i] + " ");
+		}
+		System.out.println();
+	}
+}

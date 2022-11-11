@@ -1,0 +1,36 @@
+package sw.search;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Solution.solution(12345);
+
+	}
+
+}
+
+class Solution {
+    public static int[] solution(long n) {
+    	int cnt = 0;
+        long temp = n;
+        
+        for(int i=1; temp>0;i++){
+            int count = 0;
+            temp/=10;
+            cnt=count++;
+        }
+        
+        
+		
+		int[] answer = new int[cnt];
+        
+
+        for(int i=0; n>0; i++){
+            answer[i] = (int)n%10;
+            n/=10;
+        }
+
+        
+        return answer;
+    }
+}

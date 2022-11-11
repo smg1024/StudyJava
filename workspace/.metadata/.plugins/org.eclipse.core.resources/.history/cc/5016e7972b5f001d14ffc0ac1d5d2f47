@@ -1,0 +1,15 @@
+package sw.array;
+
+import java.util.Arrays;
+
+public class Ex01_Array {
+	static int[] arr = {50, 60, 80, 30, 40};
+	
+	
+	public static void main(String[] args) {
+		Ex01_Array ea1 = new Ex01_Array();
+		System.out.println(Arrays.toString(arr));
+		
+	}
+
+}

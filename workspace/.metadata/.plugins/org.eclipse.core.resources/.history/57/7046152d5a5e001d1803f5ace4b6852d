@@ -1,0 +1,30 @@
+package io.test;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class FileCopy {
+
+	public static void main(String[] args) {
+		// 파일 내용을 byte단위로 읽어서 다른 파일로 쓰기
+		
+		try {
+			// 파일 읽어오기 (byte)단위
+			File inFile = new File("/Users/poby/etc/flower1.jpg");
+			FileInputStream fis = new FileInputStream(inFile);
+			
+			// 파일 쓰기 (byte)단위
+			File outFile = new File("/Users/poby/javatest", inFile.getName());
+			FileOutputStream fos = new FileOutputStream(outFile);
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

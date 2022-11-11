@@ -1,0 +1,19 @@
+package io.test;
+
+import java.io.File;
+
+public class FileTest {
+
+	public static void main(String[] args) {
+		// File 클래스
+		
+		File f1 = new File("/Users/poby/etc");	// 컴퓨터 내 파일경로
+		File f2 = new File("/Users/poby/etc/StringBufferTest.java");
+		File f3 = new File(f1, "StringBufferTest.java");	// 부모경로, 세부경로
+		File f4 = new File("/Users/poby/etc", "StringBufferTest.java");
+		File f5 = new File(f1, "sample.txt");	// 기존에 없는 파일 -> 에러는 안 뜸
+		
+		
+	}
+
+}

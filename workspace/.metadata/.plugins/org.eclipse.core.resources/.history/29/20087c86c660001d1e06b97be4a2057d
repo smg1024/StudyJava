@@ -1,0 +1,32 @@
+package sw.search;
+
+// 신체검사 데이터 배열 정렬하기
+public class PhyscExamSort {
+	
+	static class PhyscData{
+		String name;	// 이름
+		int height;		// 키
+		double vision;	// 시력
+		
+		public PhyscData(String name, int height, double vision) {
+			super();
+			this.name = name;
+			this.height = height;
+			this.vision = vision;
+		}
+		
+		@Override
+		public String toString() {
+			// TODO Auto-generated method stub
+			return name + "\t" + height + "\t" + vision;
+		}
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,27 @@
+package sw.test;
+
+public class Ex06_Array2 {
+
+	public static void main(String[] args) {
+		// 행 우선 탐색으로 출력
+		int[][] arr= new int[5][5];
+		int cnt = 1;
+		for(int r=0; r<arr.length; r++) {	// r=0,1,2,3,4
+			for(int c=0; c<arr[r].length; c++) {	// c=0,1,2,3,4
+				System.out.printf("%3d", arr[c][r]);
+			}
+			System.out.println();
+		}
+		System.out.println("****************");
+		
+		// 열 우선 탐색으로 출력
+		for(int c=0; c<arr.length; c++) {
+			for(int r=0; r<arr.length; r++) {
+				System.out.printf("%3d", arr[r][c]);
+			}
+			System.out.println();
+		}
+			
+	}
+
+}

@@ -1,0 +1,28 @@
+package sw.search;
+
+public class BubbleSort {
+
+	public static void main(String[] args) {
+		// 2. bubble정렬할 곳으로 호출한다
+		
+		Sort sort = new Sort();
+		sort.init();
+		sort.disp();
+	}
+
+}
+
+class Sort{
+	// 1. 배열에 정렬할 자료를 넣어준다
+	int[] num;
+	void init() {
+		num = new int[] {6, 4, 3, 7, 1, 9, 8};
+	}
+	
+	void disp() {
+		for(int n : num) {
+			System.out.printf("%2d", num);
+		}
+		System.out.println();
+	}
+}

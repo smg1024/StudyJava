@@ -1,0 +1,12 @@
+package sw.search;
+
+public class SortMain {
+
+	public static void main(String[] args) {
+		// 2017 김상민 100
+		// 2018 유현승 95
+		
+		SortTest st = new SortTest(2017, "김상민", 100);
+	}
+
+}

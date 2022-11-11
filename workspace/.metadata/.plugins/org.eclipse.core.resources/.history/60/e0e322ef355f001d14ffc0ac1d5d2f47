@@ -1,0 +1,46 @@
+package sw.array;
+
+import java.util.Scanner;
+
+/*
+ * [문제]
+ * 정수를 입력받아 팩토리얼값을 구하라.
+ * 
+ * [입력]
+ * 5
+ * 
+ * [출력]
+ * 120
+ */
+public class Ex02_Factorial {
+	static Scanner sc = new Scanner(System.in);
+
+	static int result = 1;
+	
+	public static void fac(int n) {
+		if(n==1) return;
+		result *= n;
+		fac(n-1);
+	}
+	
+	// 반복문 이용
+	public static int fact(int n) {
+		int res = 1;
+		for(int i=1; i<=n; i++) {
+			res *= i;
+		}
+		return res;
+	}
+
+	public static void main(String[] args) {
+		System.out.print("정수를 입력하세요 : ");
+		int num = sc.nextInt();
+		
+		System.out.println(fact(num));
+		
+		fac(num);
+		System.out.println(result);
+		
+	}
+
+}

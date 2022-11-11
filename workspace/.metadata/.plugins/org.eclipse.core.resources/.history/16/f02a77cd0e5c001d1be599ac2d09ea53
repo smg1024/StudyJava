@@ -1,0 +1,12 @@
+package io.test;
+
+public class InputStreamReaderTest {
+	public InputStreamReaderTest() {
+		// InputStreamReader : 콘솔, 파일, 네트워크의 데이터를 문자단위로 입력받는 클래스
+	}
+	
+	public static void main(String[] args) {
+		new InputStreamReaderTest();
+	}
+
+}

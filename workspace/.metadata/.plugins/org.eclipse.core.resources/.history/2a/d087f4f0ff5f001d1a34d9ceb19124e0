@@ -1,0 +1,66 @@
+package sw.search;
+
+import java.util.Scanner;
+
+public class IntStackMain {
+	public static Scanner sc = new Scanner(System.in);
+	
+	public static void startStack() {
+		// 스택 객체를 생성하고, 스택의 크기를 설정할 수 있음
+		IntStack stack = new IntStack(10);
+		
+		do {
+			// 메뉴 작성하기
+			System.out.print("(1) PUSH  (2) POP  (3) PEEK  (4) DUMP  (5) SEARCH  (6) EMPTY  (7) INFO  (0) 종료 -> ");
+			int menu = sc.nextInt();
+			
+			if(menu==0) {
+				System.out.println("종료했습니다.");
+				break;
+			}	// 종료
+			
+			switch(menu) {
+			case 1:
+				// push : 데이터를 스택에 담기
+				System.out.print("데이터 입력 : ");
+				int inData = sc.nextInt();
+				try {
+					stack.push(inData);
+				}catch(IntStack.OverflowIntStackException e) {
+					System.out.println("스택이 가득 찼습니다.");
+				}
+				break;
+			case 2:
+				// pop : 스택에서 제일 마지막으로 저장된 값 꺼내기
+				int popData = stack.pop();
+				System.out.println(popData + " 제거됨.");
+				break;
+			case 3:
+				// peek
+				break;
+			case 4:
+				// dump
+				break;
+			case 5:
+				// search
+				break;
+			case 6:
+				// empty
+				break;
+			case 7:
+				// info
+				break;
+			default:
+				// 메뉴를 잘못 선택했습니다.
+			}
+			
+		}while(true);
+		
+	}
+	
+	public static void main(String[] args) {
+		startStack();
+		
+	}
+
+}
