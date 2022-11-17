@@ -1,7 +1,0 @@
-package sw.search;
-
-public class SortTest {
-	private String alumni;
-	private String name;
-	private int score;
-}

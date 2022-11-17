@@ -3,10 +3,12 @@ package javaJDBC;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class InsertTest {
-
+	Scanner sc = new Scanner(System.in);
+	
 	public InsertTest() {}
 	public void empInsert() {
 		// JDBC : Java DataBase Connection
@@ -14,7 +16,7 @@ public class InsertTest {
 		// 프로젝트 -> Build Path -> Configure Build Path
 		//			-> Library -> Add External jar -> 드라이버 추가
 		
-		// 1. JDBC 드라이버를 JVM에 등록한다
+		// 1. JDBC 드라이버를 JVM에 등록한다 -- 드라이버 로딩
 		//		oracle.jdbc.driver.OracleDriver -> 패키지경로.클래스명을 알려주면 객체로 변환해주는 클래스
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -26,11 +28,13 @@ public class InsertTest {
 		// 2. DB 연결
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		Scanner sc = new Scanner(System.in);
+		
 		try {
+			String sql = null;
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";	// 서버주소, 포트, SID(전역데이터베이스)
 			String username = "poby";
 			String password = "981024";
+			
 			conn = DriverManager.getConnection(url, username, password);
 			
 			// 사원정보 - 사원번호, 사원명, 입사일(sysdate), 급여 입력
@@ -42,7 +46,7 @@ public class InsertTest {
 			int sal = Integer.parseInt(sc.nextLine());
 			
 			// 3. SQL문을 만들어 PreparedStatement 객체 생성
-			String sql = "insert into emp(empno, ename, hiredate, sal) values(?,?,sysdate,?)";	// 실제 입력 데이터는 ?로 임시처리
+			sql = "insert into emp(empno, ename, hiredate, sal) values(?,?,sysdate,?)";	// 실제 입력 데이터는 ?로 임시처리
 			pstmt = conn.prepareStatement(sql);
 			
 			// ? 세팅
@@ -60,7 +64,7 @@ public class InsertTest {
 				System.out.println("사원 등록 실패하였습니다.");
 			}
 			
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			// 5. conn, pstmt 닫기 **역순으로 닫아줘야 한다
@@ -69,15 +73,13 @@ public class InsertTest {
 				if(conn!=null) conn.close();
 			}catch(Exception e) {System.out.println("DB연결 닫기 예외발생.");}
 		}
-		sc.close();
+
 	}
 	
-	public static void main(String[] args) {
-		InsertTest it = new InsertTest();
-		it.empInsert();
-		
-		
-		
-	}
+//	public static void main(String[] args) {
+//		InsertTest it = new InsertTest();
+//		it.empInsert();
+//		
+//	}
 	
 }
