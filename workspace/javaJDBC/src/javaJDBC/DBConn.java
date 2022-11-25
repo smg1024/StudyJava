@@ -1,5 +1,6 @@
 package javaJDBC;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,9 +15,10 @@ public class DBConn {
 	// 0. 변수 선언
 	protected Connection conn = null;	// 패키지가 다를 경우 상속받아 사용 가능
 	protected PreparedStatement pstmt = null;
+	protected CallableStatement cstmt = null;	// 프로시저를 이용한 statement
 	protected ResultSet rs = null;	// SELECT문에 사용됨
 	
-	String sql = null;
+	protected String sql = null;
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	String username = "poby";
 	String password = "981024";
@@ -45,6 +47,7 @@ public class DBConn {
 		try {
 			if(rs!=null) rs.close();
 			if(pstmt!=null) pstmt.close();
+			if(cstmt!=null) cstmt.close();
 			if(conn!=null) conn.close();
 		}catch(SQLException e) {
 			System.out.println("DB 닫기 예외발생" + e.getMessage());
